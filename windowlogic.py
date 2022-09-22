@@ -1,50 +1,14 @@
 from PyQt5.QtWidgets import QWidget
-import pyqtgraph as pg
-import sim_logic as sl
-from singleton import Singleton
 from PyQt5.QtCore import QTimer
+import pyqtgraph as pg
 pg.setConfigOption('background', (25, 35, 45))
 pg.setConfigOption('foreground', 'w')
 
-
-class Getter():
-    def __init__(self, window):
-        self.window = window
-
-    def get_control_mode(self):
-        tab_idx = self.window.tab_controllers.currentIndex()
-        return self.window.tab_controllers.tabText(tab_idx)
-
-    def get_manual_control_value(self):
-        return float(self.window.le_man_cv.text())
-
-    def get_push_button_start(self):
-        return self.window.pb_start
-
-    def get_push_button_stop(self):
-        return self.window.pb_stop
-
-    def get_push_button_clear(self):
-        return self.window.pb_clear
-
-    def get_cv_chart(self):
-        return self.window.pg_cv
-
-class Setter():
-    def __init__(self, window):
-        self.window = window
-
-    def disable_element(self, gui_element):
-        gui_element.setEnabled(False)
-
-    def enable_element(self, gui_element):
-        gui_element.setEnabled(True)
-
-    def update_chart(self, chart, x, y):
-        self.window.cv_line = chart.plot(x, y)
+from Setter import Setter
+from Getter import Getter
 
 
-class GUI_Logic(QWidget, Singleton):
+class GUI_Logic(QWidget):
     def __init__(self, window):
         super().__init__()
         self.getter = Getter(window)
@@ -70,6 +34,7 @@ class GUI_Logic(QWidget, Singleton):
         self.timer.start(100)
 
         self.setter.disable_element(self.getter.get_push_button_start())
+        self.setter.disable_element(self.getter.get_push_button_clear())
         self.setter.enable_element(self.getter.get_push_button_stop())
 
     def configure_timer(self):
