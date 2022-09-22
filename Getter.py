@@ -6,6 +6,10 @@ class Getter():
         tab_idx = self.window.tab_controllers.currentIndex()
         return self.window.tab_controllers.tabText(tab_idx)
 
+    def get_model_type(self):
+        tab_idx = self.window.tab_plants.currentIndex()
+        return self.window.tab_plants.tabText(tab_idx)
+
     def get_manual_control_value(self):
         return float(self.window.le_man_cv.text())
 
@@ -18,5 +22,21 @@ class Getter():
     def get_push_button_clear(self):
         return self.window.pb_clear
 
+    def get_push_button_update_tf(self):
+        return self.window.pb_up_tf
+
     def get_cv_chart(self):
         return self.window.pg_cv
+
+    def get_sp_pv_chart(self):
+        return self.window.pg_sp_pv
+
+    def get_numerator(self):
+        input_text = self.window.le_tf_num.text()
+        input_as_list = [float(numerator) for numerator in input_text.split(' ')]
+        return input_as_list
+
+    def get_denominator(self):
+        input_text = self.window.le_tf_den.text()
+        input_as_list = [float(denominator) for denominator in input_text.split(' ')]
+        return input_as_list
