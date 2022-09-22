@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>mainWindow</class>
+ <widget class="QMainWindow" name="mainWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Dynamic systems online simulator</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -52,7 +52,14 @@
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_7">
             <item>
-             <layout class="QVBoxLayout" name="verticalLayout_6" stretch="5,1">
+             <layout class="QVBoxLayout" name="verticalLayout_6" stretch="0,5,1">
+              <item>
+               <widget class="QLabel" name="label_4">
+                <property name="text">
+                 <string>Numerator and denumerator as a space-separated floats. Example: 1 0 -2 for s^2 -2. Only proper transfer function are handled.</string>
+                </property>
+               </widget>
+              </item>
               <item>
                <layout class="QHBoxLayout" name="horizontalLayout_3">
                 <item>
@@ -76,7 +83,7 @@
                     </property>
                    </spacer>
                   </item>
-                  <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+                  <item alignment="Qt::AlignHCenter">
                    <widget class="QLabel" name="label_2">
                     <property name="text">
                      <string>Numerator's polynomial coefficients</string>
@@ -84,7 +91,7 @@
                    </widget>
                   </item>
                   <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
-                   <widget class="QLineEdit" name="lineEdit"/>
+                   <widget class="QLineEdit" name="le_tf_num"/>
                   </item>
                   <item>
                    <spacer name="verticalSpacer_3">
@@ -124,7 +131,7 @@
                    </widget>
                   </item>
                   <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
-                   <widget class="QLineEdit" name="lineEdit_2"/>
+                   <widget class="QLineEdit" name="le_tf_den"/>
                   </item>
                   <item>
                    <spacer name="verticalSpacer_6">
@@ -165,13 +172,6 @@
                  <widget class="QPushButton" name="pb_up_tf">
                   <property name="text">
                    <string>Update the model</string>
-                  </property>
-                 </widget>
-                </item>
-                <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
-                 <widget class="QPushButton" name="pb_init_tf">
-                  <property name="text">
-                   <string>Initialize the simulation</string>
                   </property>
                  </widget>
                 </item>
