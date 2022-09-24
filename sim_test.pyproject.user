@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 7.0.2, 2022-09-21T00:49:17. -->
+<!-- Written by QtCreator 7.0.2, 2022-09-24T14:16:38. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -154,11 +154,11 @@
     <valuelist type="QVariantList" key="CustomOutputParsers"/>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">C:/Users/User1/Qt Projects/sim_test/sim_logic.py</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.C:/Users/User1/Qt Projects/sim_test/sim_logic.py</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">C:/Users/User1/Qt Projects/sim_test/sim_logic.py</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">C:/Users/User1/Qt Projects/sim_test/Getter.py</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.C:/Users/User1/Qt Projects/sim_test/Getter.py</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">C:/Users/User1/Qt Projects/sim_test/Getter.py</value>
     <value type="QString" key="PythonEditor.RunConfiguation.Interpreter">{5f4429c2-5c78-4067-9f81-67bfd03dd557}</value>
-    <value type="QString" key="PythonEditor.RunConfiguation.Script">C:\Users\User1\Qt Projects\sim_test\sim_logic.py</value>
+    <value type="QString" key="PythonEditor.RunConfiguation.Script">C:\Users\User1\Qt Projects\sim_test\Getter.py</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebugger">false</value>
@@ -172,11 +172,11 @@
     <valuelist type="QVariantList" key="CustomOutputParsers"/>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">C:/Users/User1/Qt Projects/sim_test/singleton.py</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.C:/Users/User1/Qt Projects/sim_test/singleton.py</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">C:/Users/User1/Qt Projects/sim_test/singleton.py</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">C:/Users/User1/Qt Projects/sim_test/Setter.py</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.C:/Users/User1/Qt Projects/sim_test/Setter.py</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">C:/Users/User1/Qt Projects/sim_test/Setter.py</value>
     <value type="QString" key="PythonEditor.RunConfiguation.Interpreter">{5f4429c2-5c78-4067-9f81-67bfd03dd557}</value>
-    <value type="QString" key="PythonEditor.RunConfiguation.Script">C:\Users\User1\Qt Projects\sim_test\singleton.py</value>
+    <value type="QString" key="PythonEditor.RunConfiguation.Script">C:\Users\User1\Qt Projects\sim_test\Setter.py</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebugger">false</value>
@@ -190,11 +190,11 @@
     <valuelist type="QVariantList" key="CustomOutputParsers"/>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">C:/Users/User1/Qt Projects/sim_test/sandbox.py</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.C:/Users/User1/Qt Projects/sim_test/sandbox.py</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">C:/Users/User1/Qt Projects/sim_test/sandbox.py</value>
-    <value type="QString" key="PythonEditor.RunConfiguation.Interpreter">{1a64f4e6-9b16-4267-a998-ee2ea56b09f5}</value>
-    <value type="QString" key="PythonEditor.RunConfiguation.Script">C:\Users\User1\Qt Projects\sim_test\sandbox.py</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">C:/Users/User1/Qt Projects/sim_test/DB_Logger.py</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.C:/Users/User1/Qt Projects/sim_test/DB_Logger.py</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">C:/Users/User1/Qt Projects/sim_test/DB_Logger.py</value>
+    <value type="QString" key="PythonEditor.RunConfiguation.Interpreter">{5f4429c2-5c78-4067-9f81-67bfd03dd557}</value>
+    <value type="QString" key="PythonEditor.RunConfiguation.Script">C:\Users\User1\Qt Projects\sim_test\DB_Logger.py</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebugger">false</value>

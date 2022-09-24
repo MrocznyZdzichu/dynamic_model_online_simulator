@@ -15,14 +15,12 @@ class Window(QMainWindow):
         super(QMainWindow, self).__init__()
         window = uic.loadUi('mainwindow.ui', self)
         window.show()
-        self.GUI_Manager = WL.GUI_Logic(window)
-        self.GUI_Manager.connect_signals()
 
 # create pyqt5 app
 App = QApplication(sys.argv)
 App.setStyleSheet(qdarkstyle.load_stylesheet())
 # create the instance of our Window
 window = Window()
-guim = GUI_Logic(window)
+logic = GUI_Logic(window)
 # start the app
 sys.exit(App.exec())

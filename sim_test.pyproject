@@ -1,3 +1,3 @@
 {
-    "files": ["mainwindow.py","mainwindow.ui","windowlogic.py","Getter.py","Setter.py"]
+    "files": ["mainwindow.py","windowlogic.py","DB_Logger.py","Getter.py","Setter.py","mainwindow.ui","utils.py"]
 }
