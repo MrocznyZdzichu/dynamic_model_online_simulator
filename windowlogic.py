@@ -171,7 +171,7 @@ class GUI_Logic(QWidget):
             reg_desc = 'No regulator, set point computed as X * static gain'
         elif self.mode == 'PID Controller':
             reg_desc = \
-        f"PID Controller: P = {self.kp}, I = {self.ki}, D = {self.kp}, bounds = ({self.pid_ymin}, {self.pid_ymax})"
+        f"PID Controller: P = {self.kp}, I = {self.ki}, D = {self.kd}, bounds = ({self.pid_ymin}, {self.pid_ymax})"
         return reg_desc
 
     def build_pid_controller(self):
