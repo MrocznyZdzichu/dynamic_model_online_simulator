@@ -6,6 +6,7 @@ from PyQt5.QtWidgets import QWidget
 from PyQt5.QtCore import QTimer
 from PyQt5.QtCore import *
 import pyqtgraph as pg
+from simple_pid import PID
 import scipy.signal as sp
 pg.setConfigOption('background', (25, 35, 45))
 pg.setConfigOption('foreground', 'w')
@@ -35,6 +36,7 @@ class GUI_Logic(QWidget):
         self.window_handle.pb_clear.clicked.connect(self.slot_clear_sim)
 
         self.window_handle.pb_up_tf.clicked.connect(self.update_tf_model)
+        self.window_handle.pb_create_pid.clicked.connect(self.build_pid_controller)
 
     def slot_start_sim(self):
         self.mode = self.getter.get_control_mode()
@@ -75,19 +77,27 @@ class GUI_Logic(QWidget):
         self.timestamps.append(self.timestamps[-1]+0.1)
 
     def get_current_state(self):
-        self.curr_man_cv = self.getter.get_manual_control_value()
+        if self.mode == 'Manual Control':
+            self.curr_man_cv = self.getter.get_manual_control_value()
+        elif self.mode == 'PID Controller':
+            self.curr_sp = self.getter.get_pid_sp()
 
     def sim_step(self):
+        self.sp.append(self.get_sp(self.mode))
         self.cvs.append(self.compute_cv(self.mode))
         self.ys.append(self.compute_output(self.type))
-        self.sp.append(self.get_sp(self.mode))
 
         self.logger.log_sim_step(self.build_state_dict())
 
     def compute_cv(self, cv_mode):
         if cv_mode == 'Manual Control':
             curr_CV = self.getter.get_manual_control_value()
-            return curr_CV
+
+        elif cv_mode == 'PID Controller':
+            self.pid.setpoint = self.curr_sp
+            curr_CV = self.pid(self.ys[-1])
+
+        return curr_CV
 
     def compute_output(self, model_type):
         if model_type == 'Transfer Function':
@@ -97,6 +107,8 @@ class GUI_Logic(QWidget):
     def get_sp(self, mode):
         if mode == 'Manual Control':
             return self.compute_static_gain()
+        elif mode == 'PID Controller':
+            return self.getter.get_pid_sp()
         else:
             return 0
 
@@ -157,4 +169,24 @@ class GUI_Logic(QWidget):
     def build_regulator_desc(self):
         if self.mode == 'Manual Control':
             reg_desc = 'No regulator, set point computed as X * static gain'
+        elif self.mode == 'PID Controller':
+            reg_desc = \
+        f"PID Controller: P = {self.kp}, I = {self.ki}, D = {self.kp}, bounds = ({self.pid_ymin}, {self.pid_ymax})"
         return reg_desc
+
+    def build_pid_controller(self):
+        self.pid_mode = self.getter.get_pid_mode()
+
+        self.kp = self.getter.get_kp() if self.pid_mode == 'Simple' \
+                                        else -1*self.getter.get_kp()
+        self.ki = self.getter.get_ki() if self.pid_mode == 'Simple' \
+                                        else -1*self.getter.get_ki()
+        self.kd = self.getter.get_kd() if self.pid_mode == 'Simple' \
+                                        else -1*self.getter.get_kd()
+
+        self.pid_ymin = self.getter.get_pid_ymin()
+        self.pid_ymax = self.getter.get_pid_ymax()
+
+        self.pid = PID(self.kp, self.ki, self.kd
+                      , sample_time = 0.1)
+        self.pid.output_limits = (self.pid_ymin, self.pid_ymax)

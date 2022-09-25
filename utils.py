@@ -36,3 +36,13 @@ def trim_trailing_symbol(base_string, symbol):
 def refactor_power_symbols(string, variable):
     return string.replace(f'{variable}^1', f'{variable}')\
                  .replace(f'{variable}^0', '1')
+
+def get_le_as_float(lineEdit):
+    input = lineEdit.text()
+    result = float(input) if input != '' else None
+    return result
+
+def get_le_as_list_of_floats(lineEdit):
+    input = lineEdit.text()
+    result = [float(element) for element in input.split(' ')]
+    return result
