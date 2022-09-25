@@ -40,3 +40,24 @@ class Getter():
         input_text = self.window.le_tf_den.text()
         input_as_list = [float(denominator) for denominator in input_text.split(' ')]
         return input_as_list
+
+    def get_kd(self):
+        return float(self.window.le_kd.text())
+
+    def get_ki(self):
+        return float(self.window.le_ki.text())
+
+    def get_kp(self):
+        return float(self.window.le_kp.text())
+
+    def get_pid_mode(self):
+        return self.window.cb_pid_mode.currentText()
+
+    def get_pid_sp(self):
+        return float(self.window.le_pid_sp.text())
+
+    def get_pid_ymin(self):
+        return float(self.window.le_pid_ymin.text())
+
+    def get_pid_ymax(self):
+        return float(self.window.le_pid_ymax.text())
